@@ -6,14 +6,16 @@
     <title>*** Exercio1***</title>
 </head>
 <body>
-    <p> <b>A soma de <span id="valora">5</span>*<span id="valorb">7</span> é 
-        <span id="resultado">5</span> </b> </p>
+    <p> <b>A <span id="operacao" >soma</span> de <span id="valora">5 </span><span id=simbolo> * </span><span id="valorb">7</span> é 
+        <span id="resultado"> 5</span> </b> </p>
 
-            <button id="botao1"> Soma</button></p> </p>
-            <button id="botao2"> Multiplica</button>
+            <button id="botao1"> Somar</button></p> </p>
+            <button id="botao2"> Multiplicar</button>
 
 
     <script>
+       var eSimbolo = document.getElementById("simbolo"); 
+       var eOperacao = document.getElementById("operacao");
        var eValorA = document.getElementById("valora");
        var eValorB = document.getElementById("valorb");
        var eResultado = document.getElementById("resultado");
@@ -24,18 +26,29 @@
         eBotao2.addEventListener("click", calculaResultadoMult);
         eValorA.isContentEditable = true;
         eValorB.isContentEditable = true;
+
         function calculaResultadoMult()
         {
+        var s = " x "
+        var v = "mutiplicação";
         var a = eValorA.textContent;
         var b = eValorB.textContent;
         var r = a * b;
+        eSimbolo.textContent = s;
+        eOperacao.textContent = v;
         eResultado.textContent = r;
         }
+
+
         function calculaResultado()
         {
+        var s = " + "    
+        var v = "soma";
         var a = Number(eValorA.textContent);
         var b = Number(eValorB.textContent);
         var r = a + b;
+        eSimbolo.textContent = s;
+        eOperacao.textContent = v;
         eResultado.textContent = r;
         }
            
